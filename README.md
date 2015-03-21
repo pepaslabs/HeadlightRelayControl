@@ -28,7 +28,7 @@ Right-click on L1 and fill in these parameters:
 
 ![](github%20media/Clipboard05.png)
 
-We want to simulate turning this relay on.  We can do this by creating a PULSE voltage source.  Right-click on V1, then click advanced and fill in these parameters:
+We want to simulate turning this relay on.  We can do this by creating a PULSE voltage source which will switch from 0V to 12V at 10 milliseconds.  Right-click on V1, then click advanced and fill in these parameters:
 
 ![](github%20media/Clipboard07.png)
 
