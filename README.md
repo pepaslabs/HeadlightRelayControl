@@ -33,7 +33,7 @@ HID ballasts don't work like that.  The ballasts say their max draw is 10 Amps, 
 
 This situation is referred to as "thermal runaway".  The process would keep going indefinitely, except that the HID ballasts are designed with a safety mechanism where they will refuse to draw more than 10 Amps.  But at that point, the headlight switch and wiring are hot enough to start the plastic and damaging the switch.
 
-!()[github%20media/Photo_Mar_18%2C_10_02_26_PM_032115_125033_PM.jpg]
+![](github%20media/Photo_Mar_18%2C_10_02_26_PM_032115_125033_PM.jpg)
 
 ##### Solution: use relays!
 
