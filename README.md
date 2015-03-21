@@ -48,6 +48,8 @@ If you've ever operated an automotive relay at full voltage for a long period of
 
 It turns out that isn't necessary.  A relay only needs a short burst of full voltage (actually, current) to get the armature moving (this is called the **PICK** current).  Once switched, it requires only a fraction of that current (typically less than half of **PICK**) to keep the relay on (the **HOLD** current).
 
+#### Current-limiting resistor
+
 We can add a 100 Ohm current-limiting resistor after the relay coil:
 
 ![](github%20media/Clipboard14.png)
