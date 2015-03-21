@@ -38,13 +38,21 @@ Run a simulation with the following parameters:
 
 ![](github%20media/Clipboard09.png)
 
+Click on L1 to create a cursor.  We can use the cursor to meausre the current, which is 133mA:
+
+![](github%20media/Clipboard12.png)
+
 ### Optimization: PICK vs HOLD current
 
 If you've ever operated an automotive relay at full voltage for a long period of time, you know they can get pretty hot.
 
-But it turns out that isn't necessary.  A relay only needs a short burst of full voltage (current, actually) to get the switch moving (the "PICK" current).  Once switched, it requires only a fraction of that current to keep the relay on (the "HOLD" current).
+It turns out that isn't necessary.  A relay only needs a short burst of full voltage (current, actually) to get the armature moving (this is called the "PICK" current).  Once switched, it requires only a fraction of that current to keep the relay on (the "HOLD" current).
+
+
 
 There are a few ways to implement this optimization.  You could use [PWM](http://en.wikipedia.org/wiki/Pulse-width_modulation) the coil, perhaps using a purpose-built [IC](http://en.wikipedia.org/wiki/Integrated_circuit) for this, such as the [DRV120](http://www.ti.com/lit/ds/symlink/drv120.pdf) made by [TI](http://www.ti.com/).
+
+
 
 ## Background: The need for this circuit
 
