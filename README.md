@@ -2,6 +2,8 @@
 
 A circuit board to control automotive headlight [relays](http://en.wikipedia.org/wiki/Relay).
 
+![](releases/v1/top.png)
+
 ## Designing this circuit in LTSpice
 
 Let's design this circuit using [LTSpice](http://www.linear.com/ltspice).
@@ -38,7 +40,7 @@ Simulate the relay for 100 milliseconds:
 
 ![](github%20media/Clipboard09.png)
 
-Click on L1 to create a cursor.  We can use the cursor to meausre the current, which is 133mA:
+Click on the green "I(L1)" label to create a cursor.  We can use the cursor to meausre the current, which is 133mA:
 
 ![](github%20media/Clipboard12.png)
 
@@ -56,7 +58,7 @@ We can add a 100 Ohm current-limiting resistor after the relay coil:
 
 Now we have our **HOLD** current (63mA), but we've lost our **PICK** current.  This means our relay might not turn on reliably.
 
-How can we implement both a **PICK** and a **HOLD** current?  There are a few ways to implement this optimization.
+How can we have both a **PICK** and a **HOLD** current?  There are a few ways to implement this optimization.
 
 #### PWM the coil
 
@@ -80,7 +82,39 @@ Also, shorten the simulation window to just 50 milliseconds:
 
 ![](github%20media/Clipboard17.png)
 
+![](github%20media/Clipboard19.png)
 
+It worked!  We have both a **PICK** and a **HOLD** current.
+
+However, our **PICK** current is small and not very long in duration, so a 10uF capacitor might not be enough to give us reliable relay operation.
+
+Based on the [datasheet](http://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1432785-1&DocType=Customer+Drawing&DocLang=English) mentioned above, we should shoot for a **PICK** current window of around 8 milliseconds in duration, and we want it to be much closer to 133mA.
+
+Next we'll try a 100uF capacitor.  Estimate the ESR to be 100 milliohms.
+
+![](github%20media/Clipboard16.png)
+
+![](github%20media/Clipboard22.png)
+
+That's a lot closer to what we want.  Use a cursor to get a more exact idea of what our 8ms **PICK** window looks like.
+
+![](github%20media/Clipboard23.png)
+
+Just to be thorough, we should also try a larger capacitor.  Try a 220uF (with 100mOhm ESR):
+
+![](github%20media/Clipboard20.png)
+
+![](github%20media/Clipboard26.png)
+
+It looks like either 100uF or 200uF would work well.
+
+When designing a circuit, you'll often find yourself in these "[Goldilocks](http://en.wikipedia.org/wiki/The_Story_of_the_Three_Bears)" scenarios, trying to find the value that's "just right".  Its a good idea to reduce the friction of that process, so that you can iterate on a design faster.
+
+The quick-n-dirty way to do this is to triplicate your circuit and simulate all three at once.
+
+![](github%20media/Clipboard24.png)
+
+Eventually though, you'll want to learn how to [step the parameters of your simulations](http://www.linear.com/solutions/1089).
 
 ## Background: The need for this circuit
 
