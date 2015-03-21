@@ -40,7 +40,7 @@ Simulate the relay for 100 milliseconds:
 
 ![](github%20media/Clipboard09.png)
 
-Click on the green "I(L1)" label to create a cursor.  We can use the cursor to meausre the current, which is 133mA:
+Click on the green ***I(L1)*** label to create a cursor.  We can use the cursor to meausre the current, which is 133mA:
 
 ![](github%20media/Clipboard12.png)
 
