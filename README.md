@@ -19,7 +19,7 @@ The spade connector on the headlight switch got so hot that the plastic which ho
 
 True, there's more to this story than a simple matter of higher current draw.
 
-Stock halogen headlights are spec'ed at 55 watts.  If we assume that spec is for 12 Volts (rather than the 14.2 Volts you'd find in a running car), that means each lamp is drawing (55/12) 4.6 Amps.
+Stock halogen headlights are spec'ed at 55 watts.  If we assume that spec is for 12 Volts (rather than the 14.2 Volts you'd find in a running car), that means each lamp is drawing 55 / 12 = roughly 4.6 Amps.
 
 The HID ballasts I use claim their max current draw is 10 Amps.  They don't always draw 10 Amps, but they can go that high.  That's more than twice the current which the stock headlight switch and wiring were designed around.
 
