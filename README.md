@@ -42,7 +42,7 @@ Click on L1 to create a cursor.  We can use the cursor to meausre the current, w
 
 ![](github%20media/Clipboard12.png)
 
-### Optimization: PICK vs HOLD current
+### Optimization: PICK and HOLD current
 
 If you've ever operated an automotive relay at full voltage for a long period of time, you know they can get pretty hot.
 
@@ -56,9 +56,19 @@ We can add a 100 Ohm current-limiting resistor after the relay coil:
 
 Now we have our **HOLD** current (63mA), but we've lost our **PICK** current.  This means our relay might not turn on reliably.
 
-How can we implement both a **PICK** and a **HOLD** current?
+How can we implement both a **PICK** and a **HOLD** current?  There are a few ways to implement this optimization.
 
-There are a few ways to implement this optimization.  You could use [PWM](http://en.wikipedia.org/wiki/Pulse-width_modulation) the coil, perhaps using a purpose-built [IC](http://en.wikipedia.org/wiki/Integrated_circuit) for this, such as the [DRV120](http://www.ti.com/lit/ds/symlink/drv120.pdf) made by [TI](http://www.ti.com/).
+#### PWM the coil
+
+We could use [PWM](http://en.wikipedia.org/wiki/Pulse-width_modulation) the coil, perhaps using a purpose-built [IC](http://en.wikipedia.org/wiki/Integrated_circuit) for this, such as the [DRV120](http://www.ti.com/lit/ds/symlink/drv120.pdf) made by [TI](http://www.ti.com/).
+
+However, there simpler, more hobbyist-friendly tricks we could use...
+
+#### Bypass the current-limiting resistor
+
+The trick I decided to use is to bypass the current-limiting resistor with a capacitor.
+
+I came across this idea in a [blog post](http://jumperone.com/2011/10/using-relays/) by [Phil Levchenko](http://jumperone.com/about/).  He has some good videos on his (YouTube channel)(https://www.youtube.com/user/JumperOneTV).
 
 ## Background: The need for this circuit
 
