@@ -68,7 +68,17 @@ However, there even simpler, more hobbyist-friendly solutions...
 
 The technique I decided to use was to bypass the current-limiting resistor with a capacitor.
 
+![](github%20media/Clipboard25.png)
+
 I came across this trick in a [blog post](http://jumperone.com/2011/10/using-relays/) by [Phil Levchenko](http://jumperone.com/about/).  Be sure to also check out his [YouTube channel](https://www.youtube.com/user/JumperOneTV).
+
+First we will try a 10uF capacitor.  We will esitmate its [ESR](http://en.wikipedia.org/wiki/Equivalent_series_resistance) to be 1 Ohm.
+
+![](github%20media/Clipboard18.png)
+
+Also, shorten the simulation window to just 50 milliseconds:
+
+![](github%20media/Clipboard17.png)
 
 
 
