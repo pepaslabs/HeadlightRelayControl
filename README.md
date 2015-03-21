@@ -11,6 +11,10 @@ After upgrading the aging, dim headlights on my (1997 Dodge Ram) pickup truck wi
 
 The spade connector on the headlight switch got so hot that the plastic which holds it in place started to melt.  Some of the melted plastic interfered with the connection, and the connector was no longer being securely held in place.  The result was that you had to wiggle the switch to get the headlights to come, and you could occaisionally smell burning plastic.  Eventually, the connection stopped working entirely.
 
+![](github%20media/Photo_Mar_18%2C_10_02_26_PM_032115_125033_PM.jpg)
+
+![](github%20media/Photo_Mar_18%2C_10_04_28_PM_032115_125230_PM.jpg)
+
 #### Why did the stock headlight switch fail?  Its hard to beleive the HIDs drew THAT MUCH more current...
 
 True, there's more to this story than a simple matter of higher current draw.
@@ -32,10 +36,6 @@ When we turn on the 100 Watt halogen bulbs, they would draw 8.3 Amps.  The headl
 HID ballasts don't work like that.  The ballasts say their max draw is 10 Amps, but let's assume their normal, 12 Volt draw is only 6 Amps (72 Watts).  What happens when we turn them on?  Initially, the headlight switch and wiring aren't hot, and their resistance is low, and the HID ballast sees pretty close to 12 Volts, and draws 6 Amps.  But even 6 Amps is more than what the stock switch and wiring was designed to handle, so they start heating up, increasing in resistance, and creating a Voltage drop.  The HID ballasts are now only seeing 10 volts, and the compensate by increasing their current draw to 7.2 Amps (still 72 Watts).  This increased current draw causes the switch and wiring to heat up even more, become more resistive, and create an even bigger drop.  The ballast now sees only 8 Volts, and response by drawing 9 Amps (still 72 Watts).  And now the switch and wiring heat up even more, and so on, and so on...
 
 This situation is referred to as "thermal runaway".  The process would keep going indefinitely, except that the HID ballasts are designed with a safety mechanism where they will refuse to draw more than 10 Amps.  But at that point, the headlight switch and wiring are hot enough to start the plastic and damaging the switch.
-
-![](github%20media/Photo_Mar_18%2C_10_02_26_PM_032115_125033_PM.jpg)
-
-![](github%20media/Photo_Mar_18%2C_10_04_28_PM_032115_125230_PM.jpg)
 
 ##### Solution: use relays!
 
