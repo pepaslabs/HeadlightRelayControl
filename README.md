@@ -32,7 +32,7 @@ We want to simulate turning this relay on.  We can do this by creating a PULSE v
 
 ![](github%20media/Clipboard07.png)
 
-Run a simulation with the following parameters:
+Simulation for 100 milliseconds:
 
 ![](github%20media/Clipboard10.png)
 
