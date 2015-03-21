@@ -2,6 +2,8 @@
 
 A circuit board to control automotive headlight [relays](http://en.wikipedia.org/wiki/Relay).
 
+![](releases/v1/top.png)
+
 ## Designing this circuit in LTSpice
 
 Let's design this circuit using [LTSpice](http://www.linear.com/ltspice).
