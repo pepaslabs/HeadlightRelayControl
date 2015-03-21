@@ -19,6 +19,8 @@ Stock halogen headlights are spec'ed at 55 watts.  If we assume that spec is for
 
 The HID ballasts I use claim their max current draw is 10 Amps.  They don't always draw 10 Amps, but they can go that high.  That's more than twice the current which the stock headlight switch and wiring were designed around.
 
+##### HID ballasts look like a constant-wattage load
+
 However, this problem is compounded by the fact that the HID ballasts are basically a constant-current supply, which means they look like a constant-wattage load to your car's electrical system.  This means that if you try to feed the ballast a lower voltage, it will simply draw more current to make up for it.  That's why they stay the same brightness even if your voltage droops a bit.
 
 Resistive loads (like a traditional halogen bulb) don't behave like this.  If you lower the voltage, they draw fewer amps (and get dimmer).  If I had put 100 watt halogen bulbs in my truck, that would be bad (because they would try to draw 100/12 = 8.3 Amps), but it wouldn't be as precarious as the situation created by the HID ballasts.  Here's why:
