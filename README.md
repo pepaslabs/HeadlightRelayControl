@@ -28,7 +28,7 @@ Right-click on L1 and fill in these parameters:
 
 ![](github%20media/Clipboard05.png)
 
-We want to simulate turning this relay on.  We can do this by creating a PULSE voltage source which will switch from 0V to 12V at 10 milliseconds.  Right-click on V1, then click advanced and fill in these parameters:
+We want to simulate turning this relay on.  We can do this by creating a **PULSE** voltage source which will switch from 0V to 12V at 10 milliseconds.  Right-click on V1, then click advanced and fill in these parameters:
 
 ![](github%20media/Clipboard07.png)
 
@@ -46,13 +46,17 @@ Click on L1 to create a cursor.  We can use the cursor to meausre the current, w
 
 If you've ever operated an automotive relay at full voltage for a long period of time, you know they can get pretty hot.
 
-It turns out that isn't necessary.  A relay only needs a short burst of full voltage (current, actually) to get the armature moving (this is called the "PICK" current).  Once switched, it requires only a fraction of that current to keep the relay on (the "HOLD" current).
+It turns out that isn't necessary.  A relay only needs a short burst of full voltage (actually, current) to get the armature moving (this is called the **PICK** current).  Once switched, it requires only a fraction of that current (typically less than half of **PICK**) to keep the relay on (the **HOLD** current).
 
+We can add a 100 Ohm current-limiting resistor after the relay coil:
 
+![](github%20media/Clipboard14.png)
+
+Now we have our **HOLD** current (63mA), but we've lost our **PICK** current.  This means our relay might not turn on reliably.
+
+How can we implement both a **PICK** and a **HOLD** current?
 
 There are a few ways to implement this optimization.  You could use [PWM](http://en.wikipedia.org/wiki/Pulse-width_modulation) the coil, perhaps using a purpose-built [IC](http://en.wikipedia.org/wiki/Integrated_circuit) for this, such as the [DRV120](http://www.ti.com/lit/ds/symlink/drv120.pdf) made by [TI](http://www.ti.com/).
-
-
 
 ## Background: The need for this circuit
 
