@@ -17,7 +17,7 @@ Here I've measured the inductance of a typical 12 Volt, 30 Amp automotive relay 
 
 ![](github%20media/Photo%20Mar%2020%2C%208%2008%2051%20PM.jpg)
 
-Here, I've pulled up the datasheet of a similar relay listed on digikey.com, where the resistance is listed as being 90 Ohms:
+Here, I've pulled up the [datasheet](http://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1432785-1&DocType=Customer+Drawing&DocLang=English) of a similar relay [listed on digikey.com](http://www.digikey.com/product-detail/en/1432785-1/PB680-ND/807757), where the resistance is listed as being 90 Ohms:
 
 ![](github%20media/Clipboard03.png)
 
