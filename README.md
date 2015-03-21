@@ -3,6 +3,12 @@ A circuit board to control automotive headlight relays.
 
 ## How this circuit was designed
 
+Let's design this circuit using LTSpice.
+
+Start with the following basic circuit.  The inductor L1 represents the coil inside of the relay.
+
+![](github%20media/Clipboard02.png)
+
 ### Background: The need for this circuit
 
 #### Why did I make this circuit?
