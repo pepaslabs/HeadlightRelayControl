@@ -9,11 +9,23 @@ Start with the following basic circuit.  The inductor L1 represents the coil ins
 
 ![](github%20media/Clipboard02.png)
 
-Before we can simulate this circuit, we need to know some characteristics of the relay coil.
+### Specifying the relay coil parameters
+
+Before we can simulate this circuit, we need to know some characteristics of the relay coil.  Specifically, we need to know the inducatance and the resistance.
 
 Here I've measured the inductance of a typical 12 Volt, 30 Amp automotive relay to be about 132 millihenries (using a cheap [LC100-A](http://www.ebay.com/sch/i.html?_nkw=LC100-A) meter from eBay):
 
 ![](github%20media/Photo%20Mar%2020%2C%208%2008%2051%20PM.jpg)
+
+Here, I've pulled up the datasheet of a similar relay listed on digikey.com, where the resistance is listed as being 90 Ohms:
+
+![](github%20media/Clipboard03.png)
+
+![](github%20media/Clipboard04.png)
+
+Right-click on L1 and fill in these parameters:
+
+
 
 ### Background: The need for this circuit
 
