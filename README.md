@@ -66,9 +66,9 @@ However, there even simpler, more hobbyist-friendly solutions...
 
 #### Bypass the current-limiting resistor
 
-The trick I decided to use is to bypass the current-limiting resistor with a capacitor.
+The technique I decided to use was to bypass the current-limiting resistor with a capacitor.
 
-I came across this idea in a [blog post](http://jumperone.com/2011/10/using-relays/) by [Phil Levchenko](http://jumperone.com/about/).  He has some good videos on his (YouTube channel)(https://www.youtube.com/user/JumperOneTV).
+I came across this trick in a [blog post](http://jumperone.com/2011/10/using-relays/) by [Phil Levchenko](http://jumperone.com/about/).  He has some good videos on his (YouTube channel)(https://www.youtube.com/user/JumperOneTV).
 
 
 
