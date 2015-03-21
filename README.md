@@ -1,7 +1,7 @@
 # HeadlightRelayControl
 A circuit board to control automotive headlight relays.
 
-## How this circuit was designed
+## Designing this circuit in LTSpice
 
 Let's design this circuit using LTSpice.
 
@@ -25,7 +25,7 @@ Here, I've pulled up the [datasheet](http://www.te.com/commerce/DocumentDelivery
 
 Right-click on L1 and fill in these parameters:
 
-
+![](github%20media/Clipboard05.png)
 
 ### Background: The need for this circuit
 
