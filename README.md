@@ -12,7 +12,7 @@ Start with the following basic circuit.  The [inductor](http://en.wikipedia.org/
 
 ### Specifying the relay coil parameters
 
-Before we can simulate this circuit, we need to know some characteristics of the relay coil.  Specifically, we need to know the inducatance and the resistance.
+Before we can simulate this circuit, we need to know some characteristics of the relay coil.  Specifically, we need to know the [inducatance](http://en.wikipedia.org/wiki/Inductance) and the [resistance](http://en.wikipedia.org/wiki/Electrical_resistance_and_conductance).
 
 Here I've measured the inductance of a typical 12 Volt, 30 Amp automotive relay to be about 132 millihenries (using a cheap [LC100-A](http://www.ebay.com/sch/i.html?_nkw=LC100-A) meter from eBay):
 
