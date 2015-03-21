@@ -56,7 +56,7 @@ We can add a 100 Ohm current-limiting resistor after the relay coil:
 
 Now we have our **HOLD** current (63mA), but we've lost our **PICK** current.  This means our relay might not turn on reliably.
 
-How can we implement both a **PICK** and a **HOLD** current?  There are a few ways to implement this optimization.
+How can we have both a **PICK** and a **HOLD** current?  There are a few ways to implement this optimization.
 
 #### PWM the coil
 
