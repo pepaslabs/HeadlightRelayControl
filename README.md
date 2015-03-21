@@ -35,6 +35,8 @@ This situation is referred to as "thermal runaway".  The process would keep goin
 
 ![](github%20media/Photo_Mar_18%2C_10_02_26_PM_032115_125033_PM.jpg)
 
+![](github%20media/Photo_Mar_18%2C_10_04_28_PM_032115_125230_PM.jpg)
+
 ##### Solution: use relays!
 
 The solution to all of this is to use relays, which are high-current switches which are operated by a small current.  Typical automotive relays are rated to handle 30 Amps (more than enough for our HID ballasts) and they are typically controlled by about 0.125 Amps (125 milliamps).  This looks like a tiny, tiny load to your headlight switch, which means it won't even get warm, let alone hot enough to self-destruct.
