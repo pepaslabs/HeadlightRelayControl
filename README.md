@@ -38,7 +38,7 @@ Simulate the relay for 100 milliseconds:
 
 ![](github%20media/Clipboard09.png)
 
-Click on L1 to create a cursor.  We can use the cursor to meausre the current, which is 133mA:
+Click on the green "I(L1)" label to create a cursor.  We can use the cursor to meausre the current, which is 133mA:
 
 ![](github%20media/Clipboard12.png)
 
@@ -79,6 +79,24 @@ First we will try a 10uF capacitor.  We will esitmate its [ESR](http://en.wikipe
 Also, shorten the simulation window to just 50 milliseconds:
 
 ![](github%20media/Clipboard17.png)
+
+![](github%20media/Clipboard19.png)
+
+It worked!  We have both a **PICK** and a **HOLD** current.
+
+However, our **PICK** current is small and not very long in duration, so a 10uF capacitor might not be enough to give us reliable relay operation.
+
+Based on the [datasheet](http://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1432785-1&DocType=Customer+Drawing&DocLang=English) mentioned above, we should shoot for a **PICK** current window of around 8 milliseconds in duration, and we want it to be much closer to 133mA.
+
+Next we'll try a 100uF capacitor.  Estimate the ESR to be 100 milliohms.
+
+![](github%20media/Clipboard16.png)
+
+![](github%20media/Clipboard22.png)
+
+That's a lot closer to what we want.  Use a cursor to get a more exact idea of what our 8ms **PICK** window looks like.
+
+![](github%20media/Clipboard23.png)
 
 
 
