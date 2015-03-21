@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 3/19/2015 11:36:17 PM
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 3/21/2015 3:38:34 AM
 
 BeginCmp
 TimeStamp = /550A7035;
@@ -18,35 +18,35 @@ BeginCmp
 TimeStamp = /550A6578;
 Reference = D1;
 ValeurCmp = 1N4001;
-IdModule  = DIODE_3;
+IdModule  = DIODE_3_059A;
 EndCmp
 
 BeginCmp
 TimeStamp = /550A6645;
 Reference = D2;
 ValeurCmp = 1N4001;
-IdModule  = DIODE_3;
+IdModule  = DIODE_3_059A;
 EndCmp
 
 BeginCmp
 TimeStamp = /550A6676;
 Reference = D3;
 ValeurCmp = 1N4001;
-IdModule  = DIODE_3;
+IdModule  = DIODE_3_059A;
 EndCmp
 
 BeginCmp
 TimeStamp = /550A6E3B;
 Reference = D4;
 ValeurCmp = 1N4001;
-IdModule  = DIODE_3;
+IdModule  = DIODE_3_059A;
 EndCmp
 
 BeginCmp
 TimeStamp = /550A7F09;
 Reference = D5;
 ValeurCmp = 1N4001;
-IdModule  = DIODE_3;
+IdModule  = DIODE_3_059A;
 EndCmp
 
 BeginCmp
@@ -214,6 +214,48 @@ BeginCmp
 TimeStamp = /550A84A2;
 Reference = R8;
 ValeurCmp = 1k;
+IdModule  = R_AXIAL_0W25_059A;
+EndCmp
+
+BeginCmp
+TimeStamp = /550D2FEF;
+Reference = R9;
+ValeurCmp = 100;
+IdModule  = R_AXIAL_0W25_059A;
+EndCmp
+
+BeginCmp
+TimeStamp = /550D2FE9;
+Reference = R10;
+ValeurCmp = 100;
+IdModule  = R_AXIAL_0W25_059A;
+EndCmp
+
+BeginCmp
+TimeStamp = /550D2FF5;
+Reference = R11;
+ValeurCmp = 100;
+IdModule  = R_AXIAL_0W25_059A;
+EndCmp
+
+BeginCmp
+TimeStamp = /550D334A;
+Reference = R12;
+ValeurCmp = 100;
+IdModule  = R_AXIAL_0W25_059A;
+EndCmp
+
+BeginCmp
+TimeStamp = /550D3344;
+Reference = R13;
+ValeurCmp = 100;
+IdModule  = R_AXIAL_0W25_059A;
+EndCmp
+
+BeginCmp
+TimeStamp = /550D3350;
+Reference = R14;
+ValeurCmp = 100;
 IdModule  = R_AXIAL_0W25_059A;
 EndCmp
 
