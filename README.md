@@ -12,7 +12,7 @@ A circuit board to control automotive headlight [relays](http://en.wikipedia.org
 
 ### Schematic
 
-View the schematic as a [PDF](releases/v2/HeadlightRelayControl_schematic.pdf).
+[PDF](releases/v2/HeadlightRelayControl_schematic.pdf).
 
 # Designing this circuit in LTSpice
 
