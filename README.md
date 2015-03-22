@@ -248,9 +248,13 @@ But let's examine what causes this anyway.  Create two additional traces which m
 
 Ah, now this makes sense.  When LB_power shuts off, the current which keeps the low beam relay on has to go through D4 and then through D5.  This means it suffers a second diode drop (another 0.65 Volts) before it reaches the low beam coil.  That's what accounts for the slight dip in coil current.
 
-### Consider power dissipation
+This also means that when the high beams are keeping the low beams on, the current for both relay coils has to go through D4.  This provides us a nice segue into considering the power dissipation...
 
-This also means that when the high beams are keeping the low beams on, the current for both relay coils has to go through D4.  Let's take a moment to examine the power dissipation in D3, D4, and D5.  Hold down ALT and click on the diodes to create power dissipation traces.
+## Power dissipation
+
+### Diode power dissipation
+
+Let's examine the power dissipation in D3, D4, and D5.  Run a simulation and ALT-click on the diodes to create power dissipation traces.
 
 ![](github%20media/Clipboard54.png)
 
@@ -260,7 +264,27 @@ Use the zoom tool to bring the situation to light:
 
 ![](github%20media/Clipboard55.png)
 
-Now we have a better picture of what's going on.  These power dissipation figures are all below a 1/4 Watt.  When we build our board, we should probably upgrade the 1N4148 diodes to some 1N4001's.  (In fact, in order to keep our parts order simple, we will end up using 1N4001 for every diode in the circuit).
+Now we have a better picture of what's going on.  The worst case will be seen by D4 when the current for both high and low beam relay coils is flowing through it, at which point it will be dissipating 120 milliWatts.
+
+Can the 1N4148 handle this?  Better check the datasheet.
+
+![](github%20media/Clipboard64.png)
+
+Pulling up the [datasheet](http://www.vishay.com/docs/81857/1n4148.pdf) of a typical 1N4148, we see it is rated handle a dissipation of 440 milliWatts when TL (the [temperature of its leads](http://www.st.com/web/en/resource/technical/document/application_note/CD00183570.pdf)) is 45C (e.g., when it is in a hot environment).
+
+For components like resistors and diodes, its a good design rule of thumb to [stay under half of the max rated dissipation](http://www.play-hookey.com/dc_theory/resistors/components_resistors.html).  For a 1N4148, that's 220mW, so we shouldn't have a problem at 120mW.
+
+### Resistor power dissipation
+
+Let's examine the power dissipation one of the current limiting resistors, R1.  ALT-click R1 to plot the power dissipation.
+
+![](github%20media/Clipboard63.png)
+
+At 500mW, we should specify a 1 Watt resistor.
+
+However, we want to keep this as hobbyist-friendly as possible, and a hobbyist is much more likely to have 1/4 Watt resistors on hand.  A trick we can use is to "quad-up" the resistor: replace the single resistor with four resistors in a series-parallel configuration.  This keeps the overall resistance value the same, but quadruples the power rating.  Each 1/4 Watt resistor would dissipate 125mW, which just meets our half-max design rule.
+
+![](github%20media/Clipboard65.png)
 
 # Prototype
 
