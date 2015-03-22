@@ -235,7 +235,7 @@ Reconfigure the **PULSE** sources so that low beams turn on at 10 milliseconds f
 
 Now, add the missing piece.  Complete the diode OR with an additional 1N4148:
 
-![](github%20media/Clipboard49.png)
+![](github%20media/Clipboard53.png)
 
 Run the simulation again.  If the diode OR works, you should see the high beams prevent the low beams from turning off.
 
@@ -245,7 +245,7 @@ Bingo!
 
 ### Investigating a glitch
 
-However, notice that the **HOLD** current through the low beam relay coil dips a bit at the point in time where LB_power shuts off, and the low beams are being held on by the high beams.
+However, notice that the **HOLD** current through the low beam relay coil dips a bit at the point in time where the low beams are being held on by the high beams (when LB_power shuts off).
 
 In our particular case, this dip isn't large enough for us to worry about (such a small dip won't cause the relay to turn off).
 
@@ -253,7 +253,7 @@ But let's examine what causes this anyway.  Create two additional traces which m
 
 ![](github%20media/Clipboard52.png)
 
-Ah, now this makes sense.  When LB_power shuts off, the current to keep the low beam relay on has to go through both D4 and D5, which means it suffers a second diode drop (another 0.65 Volts) before it reaches the low beam coil.  That's what accounts for the slight dip in coil current.
+Ah, now this makes sense.  When LB_power shuts off, the current which keeps the low beam relay on has to go through D4 and then through D5.  This means it suffers a second diode drop (another 0.65 Volts) before it reaches the low beam coil.  That's what accounts for the slight dip in coil current.
 
 ### Consider power dissipation
 
