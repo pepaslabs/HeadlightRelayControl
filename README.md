@@ -2,9 +2,43 @@
 
 A circuit board to control automotive headlight [relays](http://en.wikipedia.org/wiki/Relay).
 
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [HeadlightRelayControl](#)
+- [Releases](#)
+	- [v2](#)
+		- [Gerbers](#)
+		- [Schematic](#)
+- [Designing this circuit in LTSpice](#)
+	- [Specifying the relay coil parameters](#)
+	- [Optimization: PICK and HOLD current](#)
+		- [Current-limiting resistor](#)
+		- [PWM the coil](#)
+		- [Bypass the current-limiting resistor](#)
+	- [Freewheeling diode](#)
+		- [Simulating inductive kickback](#)
+			- [Wait, why can't we just turn the PULSE source off at, say, 40 milliseconds?](#)
+			- [Using a switch in LTSpice](#)
+		- [So how do we get rid of the inductive kickback?](#)
+	- [Feature: When you turn on the high-beams, keep the low-beams on](#)
+		- [Setup low beam and high beam circuits](#)
+		- [Investigating a glitch](#)
+		- [Consider power dissipation](#)
+- [See also:](#)
+- [Background: The need for this circuit](#)
+	- [Why did I make this circuit?](#)
+	- [Why did the stock headlight switch fail?  Its hard to beleive the HIDs drew THAT MUCH more current...](#)
+		- [HID ballasts look like a constant-wattage load](#)
+		- [Thermal runaway](#)
+		- [Solution: use relays!](#)
+
 # Releases
 
 ## v2
+
+![](releases/v2/top.png)
+
+![](releases/v2/bottom.png)
 
 ### Gerbers
 
@@ -118,7 +152,7 @@ Just to be thorough, we should also try a larger capacitor.  Try a 220uF (with 1
 
 It looks like either 100uF or 200uF would work well.
 
-When designing a circuit, you'll often find yourself in these "[Goldilocks](http://en.wikipedia.org/wiki/The_Story_of_the_Three_Bears)" scenarios, trying to find the value that's "just right".  Its a good idea to better at this, so that you can iterate on a design faster.
+When designing a circuit, you'll often find yourself in these "[Goldilocks](http://en.wikipedia.org/wiki/The_Story_of_the_Three_Bears)" scenarios, trying to find the value that's "just right".  Its a good idea to get better at this, so that you can iterate on a design faster.
 
 The quick-n-dirty way to do this is to triplicate your circuit and simulate all three at once.
 
@@ -170,7 +204,7 @@ Houston, we have a problem (inductive kickback!):
 
 (Note that with real-world components, you won't actually reach -600,000 Volts.  That only happens with idealized components in a simulator.).
 
-Measuring the current through L1 gives you a better idea of what is going on here.  We are trying to instantly stop the current through the inductor, which causes the negative spike.
+Measuring the current through L1 gives you a better idea of what is going on here.  We are trying to instantaneously stop the current through the inductor, which causes the negative spike.
 
 ![](github%20media/Clipboard38.png)
 
@@ -252,7 +286,7 @@ This also means that when the high beams are keeping the low beams on, the curre
 
 The result is a bit confusing, because there are infinitesimally breif moments where the current spikes up over 100 Amps, which throws off the scale of the plot.  (We can safely ignore these spikes, as our real-world components will have parasitic capacitance and inductance which will greatly tame these spikes.  What remains will be so brief that it will be safely absorbed by the thermal mass of the diode).
 
-Use the zoom tool to bring the situation light:
+Use the zoom tool to bring the situation to light:
 
 ![](github%20media/Clipboard55.png)
 
