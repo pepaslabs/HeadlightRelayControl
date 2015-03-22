@@ -204,7 +204,7 @@ Houston, we have a problem (inductive kickback!):
 
 (Note that with real-world components, you won't actually reach -600,000 Volts.  That only happens with idealized components in a simulator.).
 
-Measuring the current through L1 gives you a better idea of what is going on here.  We are trying to instantly stop the current through the inductor, which causes the negative spike.
+Measuring the current through L1 gives you a better idea of what is going on here.  We are trying to instantaneously stop the current through the inductor, which causes the negative spike.
 
 ![](github%20media/Clipboard38.png)
 
