@@ -6,6 +6,10 @@ A circuit board to control automotive headlight [relays](http://en.wikipedia.org
 
 ## v2
 
+![](releases/v2/top.png)
+
+![](releases/v2/bottom.png)
+
 ### Gerbers
 
 [gerbers.zip](releases/v2/gerbers.zip)
