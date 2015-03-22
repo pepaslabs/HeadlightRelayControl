@@ -288,7 +288,7 @@ Create traces for the top and bottom of the L1 indcutor.  This identifies the no
 
 ![](github%20media/Clipboard57.png)
 
-Now right-click one of the traces to edit the expression.
+Now right-click the **V(lb_control)** label to edit its expression.
 
 ![](github%20media/Clipboard58.png)
 
