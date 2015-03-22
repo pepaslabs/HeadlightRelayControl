@@ -2,36 +2,6 @@
 
 A circuit board to control automotive headlight [relays](http://en.wikipedia.org/wiki/Relay).
 
-**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
-
-- [HeadlightRelayControl](#)
-- [Releases](#)
-	- [v2](#)
-		- [Gerbers](#)
-		- [Schematic](#)
-- [Designing this circuit in LTSpice](#)
-	- [Specifying the relay coil parameters](#)
-	- [Optimization: PICK and HOLD current](#)
-		- [Current-limiting resistor](#)
-		- [PWM the coil](#)
-		- [Bypass the current-limiting resistor](#)
-	- [Freewheeling diode](#)
-		- [Simulating inductive kickback](#)
-			- [Wait, why can't we just turn the PULSE source off at, say, 40 milliseconds?](#)
-			- [Using a switch in LTSpice](#)
-		- [So how do we get rid of the inductive kickback?](#)
-	- [Feature: When you turn on the high-beams, keep the low-beams on](#)
-		- [Setup low beam and high beam circuits](#)
-		- [Investigating a glitch](#)
-		- [Consider power dissipation](#)
-- [See also:](#)
-- [Background: The need for this circuit](#)
-	- [Why did I make this circuit?](#)
-	- [Why did the stock headlight switch fail?  Its hard to beleive the HIDs drew THAT MUCH more current...](#)
-		- [HID ballasts look like a constant-wattage load](#)
-		- [Thermal runaway](#)
-		- [Solution: use relays!](#)
-
 # Releases
 
 ## v2
@@ -291,6 +261,14 @@ Use the zoom tool to bring the situation to light:
 ![](github%20media/Clipboard55.png)
 
 Now we have a better picture of what's going on.  These power dissipation figures are all below a 1/4 Watt.  When we build our board, we should probably upgrade the 1N4148 diodes to some 1N4001's.  (In fact, in order to keep our parts order simple, we will end up using 1N4001 for every diode in the circuit).
+
+# Prototype
+
+Now that we're reasonable sure our design is sound, the next step is to make a prototype.
+
+I prefer to use [Manhattan style](https://www.google.com/search?q=manhattan+style+prototyping) construction on [copper clad](http://www.ebay.com/sch/i.html?_nkw=copper+clad).
+
+![](github%20media/github%20media/Photo%20Mar%2022%2C%2011%2027%2018%20AM.jpg)
 
 # See also:
 
