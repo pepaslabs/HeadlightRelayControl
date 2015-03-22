@@ -253,7 +253,7 @@ But let's examine what causes this anyway.  Create two additional traces which m
 
 ![](github%20media/Clipboard52.png)
 
-Ah, now this makes sense.  When LB_power shuts off, the current to keep the low beam relay on has to go through both D4 and D5, which means it suffers a second diode drop (another 0.65 Volts) before it reaches the low beam coil.  That's what accounts for the slight dip in coil current.
+Ah, now this makes sense.  When LB_power shuts off, the current which keeps the low beam relay on has to go through D4 and then through D5.  This means it suffers a second diode drop (another 0.65 Volts) before it reaches the low beam coil.  That's what accounts for the slight dip in coil current.
 
 ### Consider power dissipation
 
