@@ -235,7 +235,7 @@ Reconfigure the **PULSE** sources so that low beams turn on at 10 milliseconds f
 
 Now, add the missing piece.  Complete the diode OR with an additional 1N4148:
 
-![](github%20media/Clipboard49.png)
+![](github%20media/Clipboard53.png)
 
 Run the simulation again.  If the diode OR works, you should see the high beams prevent the low beams from turning off.
 
