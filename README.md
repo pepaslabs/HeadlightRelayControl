@@ -286,7 +286,7 @@ This also means that when the high beams are keeping the low beams on, the curre
 
 The result is a bit confusing, because there are infinitesimally breif moments where the current spikes up over 100 Amps, which throws off the scale of the plot.  (We can safely ignore these spikes, as our real-world components will have parasitic capacitance and inductance which will greatly tame these spikes.  What remains will be so brief that it will be safely absorbed by the thermal mass of the diode).
 
-Use the zoom tool to bring the situation light:
+Use the zoom tool to bring the situation to light:
 
 ![](github%20media/Clipboard55.png)
 
