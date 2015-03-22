@@ -118,23 +118,23 @@ Eventually though, you'll want to learn how to [step the parameters of your simu
 
 ## Freewheeling diode
 
-What happens when we switch the relay off?  Let's ask LTSpice.
+What happens when we switch the relay off?
 
-Add a **Ton** time of 50 milliseconds to your **PULSE** voltage source:
+Anytime you interrupt current flowing through an inductor, it creates a (negative) voltage spike, a.k.a an [inductive "kickback"](http://www.coilgun.info/theoryinductors/inductivekickback.htm) as the magnetic field in the inductor collapses.  This spike can can reach dozens, hundreds, or even thousands of Volts, which can damage other components in your circuit.
 
-![](github%20media/Clipboard28.png)
+This problem is typically mitigated by placing a [freewheeling diode](http://en.wikipedia.org/wiki/Flyback_diode) (also called a flyback diode or snubber diode) across the inductor.  The negative spike is dissipated through the diode, which "clamps" the spike to no more than the [forward voltage drop](https://learn.sparkfun.com/tutorials/diodes/real-diode-characteristics) across the diode (typically 0.65 Volts).
 
-Widen the simulation window to 100 milliseconds:
+### Simulating inductive kickback
 
-![](github%20media/Clipboard29.png)
+Does our circuit suffer from inductive kickback?  Let's ask LTSpice!
 
-![](github%20media/Clipboard30.png)
+In order to simulate that, we need to use a switch, which is slightly complicated in LTSpice.
 
-Here we see the 
-We can bypass the coil with a freewheeling diode to safely dissipate this negative voltage spike.
+#### Wait, why can't we just turn the PULSE source off at, say, 40 milliseconds?
 
+That would set the **PULSE** source to 0 Volts.  It turns out that's not the same thing as turning the circuit off (see also [Three-state logic](http://en.wikipedia.org/wiki/Three-state_logic)).
 
-All circuits which switch large amounts of current through inductive loads (e.g. a relay coil) need to include [freewheeling diodes](http://en.wikipedia.org/wiki/Flyback_diode) in order to mitigate harmful voltage spikes created by the inductor.
+When we set a voltage source to 0 Volts, it **actively drives** the circuit to 0 Volts.  That's not the same thing as just disconnecting the voltage source.  That's more like replacing the voltage source with a short-circuit (to ground).
 
 
 
