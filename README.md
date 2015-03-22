@@ -122,8 +122,6 @@ What happens when we switch the relay off?
 
 Anytime you interrupt current flowing through an inductor, it creates a (negative) voltage spike, a.k.a an [inductive "kickback"](http://www.coilgun.info/theoryinductors/inductivekickback.htm) as the magnetic field in the inductor collapses.  This spike can can reach dozens, hundreds, or even thousands of Volts, which can damage other components in your circuit.
 
-This problem is typically mitigated by placing a [freewheeling diode](http://en.wikipedia.org/wiki/Flyback_diode) (also called a flyback diode or snubber diode) across the inductor.  The negative spike is dissipated through the diode, which "clamps" the spike to no more than the [forward voltage drop](https://learn.sparkfun.com/tutorials/diodes/real-diode-characteristics) across the diode (typically 0.65 Volts).
-
 ### Simulating inductive kickback
 
 Does our circuit suffer from inductive kickback?  Let's ask LTSpice!
@@ -136,7 +134,19 @@ That would set the **PULSE** source to 0 Volts.  It turns out that's not the sam
 
 When we set a voltage source to 0 Volts, it **actively drives** the circuit to 0 Volts.  That's not the same thing as just disconnecting the voltage source.  That's more like replacing the voltage source with a short-circuit (to ground).
 
+#### Using a switch in LTSpice
 
+Grab [switch.mod](https://github.com/pepaslabs/LTSpice-parts/tree/master/parts/switch) and follow [my tutorial](https://github.com/pepaslabs/LTSpice-parts/wiki/switch) on how to incorporate it into a circuit.
+
+
+
+### So how do we get rid of the inductive kickback?
+
+Inductive kickback is typically mitigated by placing a [freewheeling diode](http://en.wikipedia.org/wiki/Flyback_diode) (also called a flyback diode or snubber diode) across the inductor.  The negative spike is dissipated through the diode, which "clamps" the spike to no more than the [forward voltage drop](https://learn.sparkfun.com/tutorials/diodes/real-diode-characteristics) across the diode (typically 0.65 Volts).
+
+# See also:
+
+* http://electronics.stackexchange.com/questions/34561/what-are-some-ways-to-use-relays-more-efficiently
 
 # Background: The need for this circuit
 
