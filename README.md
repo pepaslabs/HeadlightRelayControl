@@ -268,7 +268,7 @@ Now that we're reasonable sure our design is sound, the next step is to make a p
 
 I prefer to use [Manhattan style](https://www.google.com/search?q=manhattan+style+prototyping) construction on [copper clad](http://www.ebay.com/sch/i.html?_nkw=copper+clad).
 
-![](github%20media/github%20media/Photo%20Mar%2022%2C%2011%2027%2018%20AM.jpg)
+![](github%20media/Photo%20Mar%2022%2C%2011%2027%2018%20AM.jpg)
 
 # See also:
 
