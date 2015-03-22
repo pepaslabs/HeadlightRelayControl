@@ -150,13 +150,19 @@ Widen the simulation window to 100 milliseconds:
 
 ![](github%20media/Clipboard29.png)
 
-Houston, we have a problem (inductive kickback!):
+Run the simulation and probe the voltage between the switch and the inductor.
 
 ![](github%20media/Clipboard34.png)
+
+Houston, we have a problem (inductive kickback!):
 
 ![](github%20media/Clipboard35.png)
 
 (Note that with real-world components, you won't actually reach -600,000 Volts.  That only happens with idealized components in a simulator.).
+
+Measuring the current through L1 gives you a better idea of what is going on here.  We are trying to instantly stop the current through the inductor, which causes the negative spike.
+
+![](github%20media/Clipboard38.png)
 
 ### So how do we get rid of the inductive kickback?
 
