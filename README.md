@@ -155,6 +155,52 @@ That would set the **PULSE** source to 0 Volts.  It turns out that's not the sam
 
 When we set a voltage source to 0 Volts, it **actively drives** the circuit to 0 Volts.  That's not the same thing as just disconnecting the voltage source.  That's more like replacing the voltage source with a short-circuit (to ground).
 
+#### Using a switch in LTSpice
+
+Grab [switch.mod](https://github.com/pepaslabs/LTSpice-parts/tree/master/parts/switch) and follow [my tutorial](https://github.com/pepaslabs/LTSpice-parts/wiki/switch) on how to incorporate it into a circuit.
+
+Modify your circuit so that the switch is connected to the inductor:
+
+![](github%20media/Clipboard36.png)
+
+Reconfigure the **PULSE** source to have a **Von** of 1 Volt and a **Ton** of 50 milliseconds:
+
+![](github%20media/Clipboard37.png)
+
+Widen the simulation window to 100 milliseconds:
+
+![](github%20media/Clipboard29.png)
+
+Run the simulation and probe the voltage between the switch and the inductor.
+
+![](github%20media/Clipboard34.png)
+
+Houston, we have a problem (inductive kickback!):
+
+![](github%20media/Clipboard35.png)
+
+(Note that with real-world components, you won't actually reach -600,000 Volts.  That only happens with idealized components in a simulator.).
+
+Measuring the current through L1 gives you a better idea of what is going on here.  We are trying to instantly stop the current through the inductor, which causes the negative spike.
+
+![](github%20media/Clipboard38.png)
+
+### So how do we get rid of the inductive kickback?
+
+Inductive kickback is typically mitigated by placing a [freewheeling diode](http://en.wikipedia.org/wiki/Flyback_diode) (also called a flyback diode or snubber diode) across the inductor.  The negative spike is dissipated through the diode, which "clamps" the spike to no more than the [forward voltage drop](https://learn.sparkfun.com/tutorials/diodes/real-diode-characteristics) across the diode (typically 0.65 Volts).
+
+Place a diode across the inductor.  Right-click on the diode and make it a [1N4148](http://en.wikipedia.org/wiki/1N4148).
+
+![](github%20media/Clipboard32.png)
+
+Did it fix our negative voltage spike?
+
+![](github%20media/Clipboard40.png)
+
+Yup!
+
+(Notice the funny blip where the decaying voltage suddenly jumps back up a bit.  Note also that it jumps up by exactly 1 forward diode drop, at exactly the point when current finishes decaying in the inductor.)
+
 ## Feature: When you turn on the high-beams, keep the low-beams on
 
 This control board has a feature where the low beams stay on when the high-beams are engaged.  This was implemented using a [diode OR](http://en.wikipedia.org/wiki/Diode-or_circuit).
@@ -222,52 +268,6 @@ Use the zoom tool to bring the situation light:
 ![](github%20media/Clipboard55.png)
 
 Now we have a better picture of what's going on.  These power dissipation figures are all below a 1/4 Watt.  When we build our board, we should probably upgrade the 1N4148 diodes to some 1N4001's.  (In fact, in order to keep our parts order simple, we will end up using 1N4001 for every diode in the circuit).
-
-#### Using a switch in LTSpice
-
-Grab [switch.mod](https://github.com/pepaslabs/LTSpice-parts/tree/master/parts/switch) and follow [my tutorial](https://github.com/pepaslabs/LTSpice-parts/wiki/switch) on how to incorporate it into a circuit.
-
-Modify your circuit so that the switch is connected to the inductor:
-
-![](github%20media/Clipboard36.png)
-
-Reconfigure the **PULSE** source to have a **Von** of 1 Volt and a **Ton** of 50 milliseconds:
-
-![](github%20media/Clipboard37.png)
-
-Widen the simulation window to 100 milliseconds:
-
-![](github%20media/Clipboard29.png)
-
-Run the simulation and probe the voltage between the switch and the inductor.
-
-![](github%20media/Clipboard34.png)
-
-Houston, we have a problem (inductive kickback!):
-
-![](github%20media/Clipboard35.png)
-
-(Note that with real-world components, you won't actually reach -600,000 Volts.  That only happens with idealized components in a simulator.).
-
-Measuring the current through L1 gives you a better idea of what is going on here.  We are trying to instantly stop the current through the inductor, which causes the negative spike.
-
-![](github%20media/Clipboard38.png)
-
-### So how do we get rid of the inductive kickback?
-
-Inductive kickback is typically mitigated by placing a [freewheeling diode](http://en.wikipedia.org/wiki/Flyback_diode) (also called a flyback diode or snubber diode) across the inductor.  The negative spike is dissipated through the diode, which "clamps" the spike to no more than the [forward voltage drop](https://learn.sparkfun.com/tutorials/diodes/real-diode-characteristics) across the diode (typically 0.65 Volts).
-
-Place a diode across the inductor.  Right-click on the diode and make it a [1N4148](http://en.wikipedia.org/wiki/1N4148).
-
-![](github%20media/Clipboard32.png)
-
-Did it fix our negative voltage spike?
-
-![](github%20media/Clipboard40.png)
-
-Yup!
-
-(Notice the funny blip where the decaying voltage suddenly jumps back up a bit.  Note also that it jumps up by exactly 1 forward diode drop, at exactly the point when current finishes decaying in the inductor.)
 
 # See also:
 
