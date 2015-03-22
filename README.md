@@ -150,17 +150,35 @@ Widen the simulation window to 100 milliseconds:
 
 ![](github%20media/Clipboard29.png)
 
-Houston, we have a problem (inductive kickback!):
+Run the simulation and probe the voltage between the switch and the inductor.
 
 ![](github%20media/Clipboard34.png)
+
+Houston, we have a problem (inductive kickback!):
 
 ![](github%20media/Clipboard35.png)
 
 (Note that with real-world components, you won't actually reach -600,000 Volts.  That only happens with idealized components in a simulator.).
 
+Measuring the current through L1 gives you a better idea of what is going on here.  We are trying to instantly stop the current through the inductor, which causes the negative spike.
+
+![](github%20media/Clipboard38.png)
+
 ### So how do we get rid of the inductive kickback?
 
 Inductive kickback is typically mitigated by placing a [freewheeling diode](http://en.wikipedia.org/wiki/Flyback_diode) (also called a flyback diode or snubber diode) across the inductor.  The negative spike is dissipated through the diode, which "clamps" the spike to no more than the [forward voltage drop](https://learn.sparkfun.com/tutorials/diodes/real-diode-characteristics) across the diode (typically 0.65 Volts).
+
+Place a diode across the inductor.  Right-click on the diode and make it a [1N4148](http://en.wikipedia.org/wiki/1N4148).
+
+![](github%20media/Clipboard32.png)
+
+Did it fix our negative voltage spike?
+
+![](github%20media/Clipboard40.png)
+
+Yup!
+
+(Notice the funny blip where the decaying voltage suddenly jumps back up a bit.  Note also that it jumps up by exactly 1 forward diode drop, at exactly the point when current finishes decaying in the inductor.)
 
 # See also:
 
