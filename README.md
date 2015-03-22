@@ -152,7 +152,7 @@ Just to be thorough, we should also try a larger capacitor.  Try a 220uF (with 1
 
 It looks like either 100uF or 200uF would work well.
 
-When designing a circuit, you'll often find yourself in these "[Goldilocks](http://en.wikipedia.org/wiki/The_Story_of_the_Three_Bears)" scenarios, trying to find the value that's "just right".  Its a good idea to better at this, so that you can iterate on a design faster.
+When designing a circuit, you'll often find yourself in these "[Goldilocks](http://en.wikipedia.org/wiki/The_Story_of_the_Three_Bears)" scenarios, trying to find the value that's "just right".  Its a good idea to get better at this, so that you can iterate on a design faster.
 
 The quick-n-dirty way to do this is to triplicate your circuit and simulate all three at once.
 
