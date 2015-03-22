@@ -245,7 +245,7 @@ Bingo!
 
 ### Investigating a glitch
 
-However, notice that the **HOLD** current through the low beam relay coil dips a bit at the point in time where LB_power shuts off, and the low beams are being held on by the high beams.
+However, notice that the **HOLD** current through the low beam relay coil dips a bit at the point in time where the low beams are being held on by the high beams (when LB_power shuts off).
 
 In our particular case, this dip isn't large enough for us to worry about (such a small dip won't cause the relay to turn off).
 
