@@ -6,6 +6,10 @@ A circuit board to control automotive headlight [relays](http://en.wikipedia.org
 
 ## v2
 
+### Gerbers
+
+[gerbers.zip](releases/v2/gerbers.zip)
+
 ### Schematic
 
 View the schematic as a [PDF](releases/v2/HeadlightRelayControl_schematic.pdf).
@@ -40,7 +44,7 @@ We want to simulate turning this relay on.  We can do this by creating a **PULSE
 
 ![](github%20media/Clipboard07.png)
 
-Simulate the relay for 100 milliseconds:
+Simulate the relay for 100 milliseconds
 
 ![](github%20media/Clipboard10.png)
 
