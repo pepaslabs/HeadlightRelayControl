@@ -272,6 +272,40 @@ I prefer to use [Manhattan style](https://www.google.com/search?q=manhattan+styl
 
 Note that I used terminal blocks to hold the bypass capacitors, so that I could easy swap them out and try different values of capacitance.
 
+# Verification
+
+Now that we have a prototype, we can compare its behavior to our LTSpice simulation.
+
+Here, I've used a Vcc of 12V, using 220uF bypass capacitors, and I'm probing the voltage across the relay coil.
+
+![](github%20media/Clipboard56.png)
+
+Pretty close!
+
+Here's how I set this up in LTSpice.  To measure the voltage across a component (in this case, across L1), you have to manually edit the expression of a trace.
+
+Create traces for the top and bottom of the L1 indcutor.  This identifies the node names for us.
+
+![](github%20media/Clipboard57.png)
+
+Now right-click one of the traces to edit the expression.
+
+![](github%20media/Clipboard58.png)
+
+Edit the expression to give you the difference in voltage.
+
+![](github%20media/Clipboard59.png)
+
+Viola!
+
+![](github%20media/Clipboard61.png)
+
+However, the scale of the plot does not line up with the results on the oscillosope.  Right click the plot and choose "Manual limits".  My scope has 12 horizontal divisions, and I'm at 10ms per division, so the LTSpice plot should be 120ms wide.  My scope has 8 vertical divisions and I'm at 2V per division, with a -6V offset, so my LTSpice plot should range from -2V to 14V in order to match the scope.
+
+![](github%20media/Clipboard62.png)
+
+![](github%20media/Clipboard60.png)
+
 # See also:
 
 * http://electronics.stackexchange.com/questions/34561/what-are-some-ways-to-use-relays-more-efficiently
