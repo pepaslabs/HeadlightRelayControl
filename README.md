@@ -168,6 +168,18 @@ Measuring the current through L1 gives you a better idea of what is going on her
 
 Inductive kickback is typically mitigated by placing a [freewheeling diode](http://en.wikipedia.org/wiki/Flyback_diode) (also called a flyback diode or snubber diode) across the inductor.  The negative spike is dissipated through the diode, which "clamps" the spike to no more than the [forward voltage drop](https://learn.sparkfun.com/tutorials/diodes/real-diode-characteristics) across the diode (typically 0.65 Volts).
 
+Place a diode across the inductor.  Right-click on the diode and make it a [1N4148](http://en.wikipedia.org/wiki/1N4148).
+
+![](github%20media/Clipboard32.png)
+
+Did it fix our negative voltage spike?
+
+![](github%20media/Clipboard40.png)
+
+Yup!
+
+(Notice the funny blip where the decaying voltage suddenly jumps back up a bit.  Note also that it jumps up by exactly 1 forward diode drop, at exactly the point when current finishes decaying in the inductor.)
+
 # See also:
 
 * http://electronics.stackexchange.com/questions/34561/what-are-some-ways-to-use-relays-more-efficiently
