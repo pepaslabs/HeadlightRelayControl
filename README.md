@@ -2,29 +2,14 @@
 
 A circuit board to control automotive headlight [relays](http://en.wikipedia.org/wiki/Relay).
 
-![](releases/v1/top.png)
+# Releases
 
-**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+## v2
 
-- [Designing this circuit in LTSpice](#)
-	- [Specifying the relay coil parameters](#)
-	- [Optimization: PICK and HOLD current](#)
-		- [Current-limiting resistor](#)
-		- [PWM the coil](#)
-		- [Bypass the current-limiting resistor](#)
-	- [Freewheeling diode](#)
-		- [Simulating inductive kickback](#)
-			- [Wait, why can't we just turn the PULSE source off at, say, 40 milliseconds?](#)
-			- [Using a switch in LTSpice](#)
-		- [So how do we get rid of the inductive kickback?](#)
-- [See also:](#)
-- [Background: The need for this circuit](#)
-	- [Why did I make this circuit?](#)
-	- [Why did the stock headlight switch fail?  Its hard to beleive the HIDs drew THAT MUCH more current...](#)
-		- [HID ballasts look like a constant-wattage load](#)
-		- [Thermal runaway](#)
-		- [Solution: use relays!](#)
- 
+### Schematic
+
+View the schematic as a [PDF](releases/v2/HeadlightRelayControl_schematic.pdf).
+
 # Designing this circuit in LTSpice
 
 Let's design this circuit using [LTSpice](http://www.linear.com/ltspice).
