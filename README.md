@@ -138,7 +138,25 @@ When we set a voltage source to 0 Volts, it **actively drives** the circuit to 0
 
 Grab [switch.mod](https://github.com/pepaslabs/LTSpice-parts/tree/master/parts/switch) and follow [my tutorial](https://github.com/pepaslabs/LTSpice-parts/wiki/switch) on how to incorporate it into a circuit.
 
+Modify your circuit so that the switch is connected to the inductor:
 
+![](github%20media/Clipboard36.png)
+
+Reconfigure the **PULSE** source to have a **Von** of 1 Volt and a **Ton** of 50 milliseconds:
+
+![](github%20media/Clipboard37.png)
+
+Widen the simulation window to 100 milliseconds:
+
+![](github%20media/Clipboard29.png)
+
+Houston, we have a problem (inductive kickback!):
+
+![](github%20media/Clipboard34.png)
+
+![](github%20media/Clipboard35.png)
+
+(Note that with real-world components, you won't actually reach -600,000 Volts.  That only happens with idealized components in a simulator.).
 
 ### So how do we get rid of the inductive kickback?
 
