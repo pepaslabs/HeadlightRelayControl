@@ -4,6 +4,27 @@ A circuit board to control automotive headlight [relays](http://en.wikipedia.org
 
 ![](releases/v1/top.png)
 
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [Designing this circuit in LTSpice](#)
+	- [Specifying the relay coil parameters](#)
+	- [Optimization: PICK and HOLD current](#)
+		- [Current-limiting resistor](#)
+		- [PWM the coil](#)
+		- [Bypass the current-limiting resistor](#)
+	- [Freewheeling diode](#)
+		- [Simulating inductive kickback](#)
+			- [Wait, why can't we just turn the PULSE source off at, say, 40 milliseconds?](#)
+			- [Using a switch in LTSpice](#)
+		- [So how do we get rid of the inductive kickback?](#)
+- [See also:](#)
+- [Background: The need for this circuit](#)
+	- [Why did I make this circuit?](#)
+	- [Why did the stock headlight switch fail?  Its hard to beleive the HIDs drew THAT MUCH more current...](#)
+		- [HID ballasts look like a constant-wattage load](#)
+		- [Thermal runaway](#)
+		- [Solution: use relays!](#)
+ 
 # Designing this circuit in LTSpice
 
 Let's design this circuit using [LTSpice](http://www.linear.com/ltspice).
@@ -179,6 +200,74 @@ Did it fix our negative voltage spike?
 Yup!
 
 (Notice the funny blip where the decaying voltage suddenly jumps back up a bit.  Note also that it jumps up by exactly 1 forward diode drop, at exactly the point when current finishes decaying in the inductor.)
+
+## Feature: When you turn on the high-beams, keep the low-beams on
+
+This control board has a feature where the low beams stay on when the high-beams are engaged.  This was implemented using a [diode OR](http://en.wikipedia.org/wiki/Diode-or_circuit).
+
+Before we can simulate this feature, we need to duplicate our relay control circuit (to simulate both low beam and high beam), and put in an incomplete diode OR circuit (which we will complete later).
+
+### Setup low beam and high beam circuits
+
+Make a copy of the relay coil control circuit:
+
+![](github%20media/Clipboard44.png)
+
+Setup two switches:
+
+![](github%20media/Clipboard46.png)
+
+Create the (incomplete) diode OR:
+
+![](github%20media/Clipboard47.png)
+
+The complete circuit should look like this:
+
+![](github%20media/Clipboard48.png)
+
+Reconfigure the **PULSE** sources so that low beams turn on at 10 milliseconds for a duration of 20 milliseconds, and high beams turn on at 20 milliseconds for a duration of 20 milliseconds.  This will set up the following events:
+* at T=10ms, low beams will turn on
+* at T=20ms, high beams will turn on
+* at T=30ms, low beams will turn off
+* at T=40ms, high beams will turn off
+
+![](github%20media/Clipboard49.png)
+
+Now, add the missing piece.  Complete the diode OR with an additional 1N4148:
+
+![](github%20media/Clipboard49.png)
+
+Run the simulation again.  If the diode OR works, you should see the high beams prevent the low beams from turning off.
+
+![](github%20media/Clipboard50.png)
+
+Bingo!
+
+### Investigating a glitch
+
+However, notice that the **HOLD** current through the low beam relay coil dips a bit at the point in time where LB_power shuts off, and the low beams are being held on by the high beams.
+
+In our particular case, this dip isn't large enough for us to worry about (such a small dip won't cause the relay to turn off).
+
+But let's examine what causes this anyway.  Create two additional traces which monitor LB_control and HB_control:
+
+![](github%20media/Clipboard52.png)
+
+Ah, now this makes sense.  When LB_power shuts off, the current to keep the low beam relay on has to go through both D4 and D5, which means it suffers a second diode drop (another 0.65 Volts) before it reaches the low beam coil.  That's what accounts for the slight dip in coil current.
+
+### Consider power dissipation
+
+This also means that when the high beams are keeping the low beams on, the current for both relay coils has to go through D4.  Let's take a moment to examine the power dissipation in D3, D4, and D5.  Hold down ALT and click on the diodes to create power dissipation traces.
+
+![](github%20media/Clipboard54.png)
+
+The result is a bit confusing, because there are infinitesimally breif moments where the current spikes up over 100 Amps, which throws off the scale of the plot.  (We can safely ignore these spikes, as our real-world components will have parasitic capacitance and inductance which will greatly tame these spikes.  What remains will be so brief that it will be safely absorbed by the thermal mass of the diode).
+
+Use the zoom tool to bring the situation light:
+
+![](github%20media/Clipboard55.png)
+
+Now we have a better picture of what's going on.  These power dissipation figures are all below a 1/4 Watt.  When we build our board, we should probably upgrade the 1N4148 diodes to some 1N4001's.  (In fact, in order to keep our parts order simple, we will end up using 1N4001 for every diode in the circuit).
 
 # See also:
 
