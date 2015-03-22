@@ -116,6 +116,28 @@ The quick-n-dirty way to do this is to triplicate your circuit and simulate all 
 
 Eventually though, you'll want to learn how to [step the parameters of your simulations](http://www.linear.com/solutions/1089).
 
+## Freewheeling diode
+
+What happens when we switch the relay off?  Let's ask LTSpice.
+
+Add a **Ton** time of 50 milliseconds to your **PULSE** voltage source:
+
+![](github%20media/Clipboard28.png)
+
+Widen the simulation window to 100 milliseconds:
+
+![](github%20media/Clipboard29.png)
+
+![](github%20media/Clipboard30.png)
+
+Here we see the 
+We can bypass the coil with a freewheeling diode to safely dissipate this negative voltage spike.
+
+
+All circuits which switch large amounts of current through inductive loads (e.g. a relay coil) need to include [freewheeling diodes](http://en.wikipedia.org/wiki/Flyback_diode) in order to mitigate harmful voltage spikes created by the inductor.
+
+
+
 # Background: The need for this circuit
 
 ## Why did I make this circuit?
