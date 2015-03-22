@@ -264,7 +264,7 @@ Now we have a better picture of what's going on.  These power dissipation figure
 
 # Prototype
 
-Now that we're reasonable sure our design is sound, the next step is to make a prototype.
+Now that we're reasonably sure our design is sound, the next step is to make a prototype.
 
 I prefer to use [Manhattan style](https://www.google.com/search?q=manhattan+style+prototyping) construction on [copper clad](http://www.ebay.com/sch/i.html?_nkw=copper+clad).
 
