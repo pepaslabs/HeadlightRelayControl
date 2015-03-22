@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 3/21/2015 10:27:36 PM
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 3/21/2015 10:54:56 PM
 
 BeginCmp
 TimeStamp = /550A7035;
@@ -99,6 +99,13 @@ IdModule  = hole_M3_2;
 EndCmp
 
 BeginCmp
+TimeStamp = /550E4BBE;
+Reference = H4;
+ValeurCmp = HOLE;
+IdModule  = hole_M3;
+EndCmp
+
+BeginCmp
 TimeStamp = /550B95E3;
 Reference = H5;
 ValeurCmp = FEET;
@@ -117,6 +124,27 @@ TimeStamp = /550B95F2;
 Reference = H7;
 ValeurCmp = FEET;
 IdModule  = LCBSBM-4-01A-RT;
+EndCmp
+
+BeginCmp
+TimeStamp = /550E4BCD;
+Reference = H8;
+ValeurCmp = HOLE;
+IdModule  = hole_M3;
+EndCmp
+
+BeginCmp
+TimeStamp = /550E4BDC;
+Reference = H9;
+ValeurCmp = HOLE;
+IdModule  = hole_M3;
+EndCmp
+
+BeginCmp
+TimeStamp = /550E4BEB;
+Reference = H10;
+ValeurCmp = HOLE;
+IdModule  = hole_M3;
 EndCmp
 
 BeginCmp
