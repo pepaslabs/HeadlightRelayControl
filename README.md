@@ -18,6 +18,10 @@ A circuit board to control automotive headlight [relays](http://en.wikipedia.org
 
 [PDF](releases/v2/HeadlightRelayControl_schematic.pdf).
 
+## v1
+
+(This release had an error and is deprecated.)
+
 # Designing this circuit in LTSpice
 
 Let's design this circuit using [LTSpice](http://www.linear.com/ltspice).
