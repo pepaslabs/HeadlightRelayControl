@@ -2,41 +2,43 @@
 
 A circuit board to control automotive headlight [relays](http://en.wikipedia.org/wiki/Relay).
 
-# Releases
+# Board design v3
 
-## Board design v3
+In this iteration of the board, the current-limiting resistors are replaced with constant-current sinks.
 
 ![](releases/v3/top.png)
 
 ![](releases/v3/bottom.png)
 
-In this iteration of the board, the current-limiting resistors are replaced with constant-current sinks.
+(*Board renders courtesy of [OSHPark](https://oshpark.com/shared_projects/tsktpm17)*)
 
-### Gerbers
+## Gerbers
 
 [gerbers.zip](releases/v3/gerbers.zip)
 
-### Schematic
+## Schematic
 
 [PDF](releases/v3/HeadlightRelayControl_schematic.pdf).
 
-## Board design v2
+# Board design v2
+
+This was the first iteration of the design (which had no mistakes!).
 
 ![](releases/v2/top.png)
 
 ![](releases/v2/bottom.png)
 
-This was the first iteration of the design (which had no mistakes!).
+(*Board renders courtesy of [OSHPark](https://oshpark.com/shared_projects/l73fKEFv)*)
 
-### Gerbers
+## Gerbers
 
 [gerbers.zip](releases/v2/gerbers.zip)
 
-### Schematic
+## Schematic
 
 [PDF](releases/v2/HeadlightRelayControl_schematic.pdf).
 
-## Board design v1
+# Board design v1
 
 (This release had an error and is deprecated.)
 
