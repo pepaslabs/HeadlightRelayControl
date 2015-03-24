@@ -294,7 +294,7 @@ I prefer to use [Manhattan style](https://www.google.com/search?q=manhattan+styl
 
 ![](github%20media/Photo%20Mar%2022%2C%2011%2027%2018%20AM.jpg)
 
-Note that I used terminal blocks to hold the bypass capacitors, so that I could easy swap them out and try different values of capacitance.
+Note that I used [terminal blocks](http://www.taydaelectronics.com/connectors-sockets/terminal-blocks/pcb-mount.html) to hold the bypass capacitors, so that I could easy swap them out and try different values of capacitance.
 
 # Verification
 
