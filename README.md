@@ -4,11 +4,29 @@ A circuit board to control automotive headlight [relays](http://en.wikipedia.org
 
 # Releases
 
-## v2
+## Board design v3
+
+![](releases/v3/top.png)
+
+![](releases/v3/bottom.png)
+
+In this iteration of the board, the current-limiting resistors are replaced with constant-current sinks.
+
+### Gerbers
+
+[gerbers.zip](releases/v3/gerbers.zip)
+
+### Schematic
+
+[PDF](releases/v3/HeadlightRelayControl_schematic.pdf).
+
+## Board design v2
 
 ![](releases/v2/top.png)
 
 ![](releases/v2/bottom.png)
+
+This was the first iteration of the design (which had no mistakes!).
 
 ### Gerbers
 
@@ -17,6 +35,10 @@ A circuit board to control automotive headlight [relays](http://en.wikipedia.org
 ### Schematic
 
 [PDF](releases/v2/HeadlightRelayControl_schematic.pdf).
+
+## Board design v1
+
+(This release had an error and is deprecated.)
 
 # Designing this circuit in LTSpice
 
