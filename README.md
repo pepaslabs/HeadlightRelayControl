@@ -2,6 +2,10 @@
 
 A circuit board to control automotive headlight [relays](http://en.wikipedia.org/wiki/Relay).
 
+## License
+
+This board design is [Open-Source Hardware](http://www.oshwa.org/definition/).  It is licensed under the [MIT License](http://opensource.org/licenses/MIT).  It was designed by Jason Pepas.
+
 # Board design v3
 
 In this iteration of the board, the current-limiting resistors are replaced with constant-current sinks.
