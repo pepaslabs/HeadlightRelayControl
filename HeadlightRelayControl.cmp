@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 3/22/2015 6:53:37 PM
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 4/1/2015 10:21:24 PM
 
 BeginCmp
 TimeStamp = /550F6607;
@@ -31,22 +31,22 @@ EndCmp
 BeginCmp
 TimeStamp = /550A6578;
 Reference = D3;
-ValeurCmp = 1N4001;
-IdModule  = DIODE_3_059A;
+ValeurCmp = 1N5817;
+IdModule  = DIODE_1A_069A_PL;
 EndCmp
 
 BeginCmp
 TimeStamp = /550A6645;
 Reference = D4;
-ValeurCmp = 1N4001;
-IdModule  = DIODE_3_059A;
+ValeurCmp = 1N5817;
+IdModule  = DIODE_1A_069A_PL;
 EndCmp
 
 BeginCmp
 TimeStamp = /550A6676;
 Reference = D5;
-ValeurCmp = 1N4001;
-IdModule  = DIODE_3_059A;
+ValeurCmp = 1N5817;
+IdModule  = DIODE_1A_069A_PL;
 EndCmp
 
 BeginCmp
@@ -66,15 +66,15 @@ EndCmp
 BeginCmp
 TimeStamp = /550F65FD;
 Reference = D8;
-ValeurCmp = 1N4001;
-IdModule  = DIODE_3_059A;
+ValeurCmp = 1N4148;
+IdModule  = DIODE_SS_059A_PL;
 EndCmp
 
 BeginCmp
 TimeStamp = /550F68CB;
 Reference = D9;
-ValeurCmp = 1N4001;
-IdModule  = DIODE_3_059A;
+ValeurCmp = 1N4148;
+IdModule  = DIODE_SS_059A_PL;
 EndCmp
 
 BeginCmp

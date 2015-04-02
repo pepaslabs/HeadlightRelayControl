@@ -1,7 +1,7 @@
 (export (version D)
   (design
-    (source "C:/Documents and Settings/Jason/My Documents/Dropbox/KiCad/HeadlightRelayControlCC/HeadlightRelayControl.sch")
-    (date "3/23/2015 10:53:53 PM")
+    (source "C:/Documents and Settings/Jason Pepas/My Documents/Dropbox/git/pepaslabs/HeadlightRelayControl/HeadlightRelayControl.sch")
+    (date "4/1/2015 10:20:59 PM")
     (tool "eeschema (2013-07-07 BZR 4022)-stable"))
   (components
     (comp (ref P1)
@@ -10,17 +10,17 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 550A6075))
     (comp (ref D3)
-      (value 1N4001)
+      (value 1N5817)
       (libsource (lib diodes_PL) (part DIODE))
       (sheetpath (names /) (tstamps /))
       (tstamp 550A6578))
     (comp (ref D4)
-      (value 1N4001)
+      (value 1N5817)
       (libsource (lib diodes_PL) (part DIODE))
       (sheetpath (names /) (tstamps /))
       (tstamp 550A6645))
     (comp (ref D5)
-      (value 1N4001)
+      (value 1N5817)
       (libsource (lib diodes_PL) (part DIODE))
       (sheetpath (names /) (tstamps /))
       (tstamp 550A6676))
@@ -125,7 +125,7 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 550F65F7))
     (comp (ref D8)
-      (value 1N4001)
+      (value 1N4148)
       (libsource (lib diodes_PL) (part DIODE))
       (sheetpath (names /) (tstamps /))
       (tstamp 550F65FD))
@@ -175,7 +175,7 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 550F68C5))
     (comp (ref D9)
-      (value 1N4001)
+      (value 1N4148)
       (libsource (lib diodes_PL) (part DIODE))
       (sheetpath (names /) (tstamps /))
       (tstamp 550F68CB))
@@ -232,32 +232,10 @@
       (pins
         (pin (num 1) (name ~) (type passive))
         (pin (num 2) (name ~) (type passive))))
-    (libpart (lib mounting_holes_PL) (part Feet)
-      (description "Mounting feet")
-      (footprints
-        (fp feet_*))
-      (fields
-        (field (name Reference) H)
-        (field (name Value) Feet)
-        (field (name Footprint) ~)
-        (field (name Datasheet) ~))
-      (pins
-        (pin (num 1) (name 1) (type passive))))
-    (libpart (lib mounting_holes_PL) (part Hole)
-      (description "Mounting hole")
-      (footprints
-        (fp hole_*))
-      (fields
-        (field (name Reference) H)
-        (field (name Value) Hole)
-        (field (name Footprint) ~)
-        (field (name Datasheet) ~))
-      (pins
-        (pin (num 1) (name 1) (type passive))))
     (libpart (lib diodes_PL) (part DIODE)
       (description Diode)
       (footprints
-        (fp DIODE_*))
+        (fp DIODE_*_PL))
       (fields
         (field (name Reference) D)
         (field (name Value) DIODE)
@@ -284,6 +262,28 @@
       (pins
         (pin (num 1) (name A) (type passive))
         (pin (num 2) (name K) (type passive))))
+    (libpart (lib mounting_holes_PL) (part Feet)
+      (description "Mounting feet")
+      (footprints
+        (fp feet_*))
+      (fields
+        (field (name Reference) H)
+        (field (name Value) Feet)
+        (field (name Footprint) ~)
+        (field (name Datasheet) ~))
+      (pins
+        (pin (num 1) (name 1) (type passive))))
+    (libpart (lib mounting_holes_PL) (part Hole)
+      (description "Mounting hole")
+      (footprints
+        (fp hole_*))
+      (fields
+        (field (name Reference) H)
+        (field (name Value) Hole)
+        (field (name Footprint) ~)
+        (field (name Datasheet) ~))
+      (pins
+        (pin (num 1) (name 1) (type passive))))
     (libpart (lib resistors_PL) (part R_0W25)
       (description "Resistor 1/4W 5% Carbon Film")
       (footprints
@@ -348,14 +348,14 @@
         (pin (num 2) (name P2) (type passive))
         (pin (num 3) (name P3) (type passive)))))
   (libraries
-    (library (logical capacitors_PL)
-      (uri parts\capacitors_PL.lib))
-    (library (logical mounting_holes_PL)
-      (uri parts\mounting_holes_PL.lib))
     (library (logical diodes_PL)
       (uri parts\diodes_PL.lib))
     (library (logical LEDs_PL)
       (uri parts\LEDs_PL.lib))
+    (library (logical capacitors_PL)
+      (uri parts\capacitors_PL.lib))
+    (library (logical mounting_holes_PL)
+      (uri parts\mounting_holes_PL.lib))
     (library (logical resistors_PL)
       (uri parts\resistors_PL.lib))
     (library (logical transistors_PL)
@@ -363,7 +363,7 @@
     (library (logical conn)
       (uri "C:\\Program Files\\KiCad\\share\\library\\conn.lib"))
     (library (logical HeadlightRelayControl-cache)
-      (uri "C:\\Documents and Settings\\Jason\\My Documents\\Dropbox\\KiCad\\HeadlightRelayControlCC\\HeadlightRelayControl-cache.lib")))
+      (uri "C:\\Documents and Settings\\Jason Pepas\\My Documents\\Dropbox\\git\\pepaslabs\\HeadlightRelayControl\\HeadlightRelayControl-cache.lib")))
   (nets
     (net (code 1) (name "")
       (node (ref Q1) (pin 3))

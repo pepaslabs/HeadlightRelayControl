@@ -1,4 +1,4 @@
-EESchema-LIBRARY Version 2.3  Date: 3/23/2015 11:30:45 PM
+EESchema-LIBRARY Version 2.3  Date: 4/1/2015 11:06:55 PM
 #encoding utf-8
 #
 # 2N3904
@@ -112,7 +112,7 @@ F1 "DIODE" 0 -100 40 H V C CNN
 F2 "~" 0 0 60 H V C CNN
 F3 "~" 0 0 60 H V C CNN
 $FPLIST
- DIODE_*
+ DIODE_*_PL
 $ENDFPLIST
 DRAW
 P 2 0 1 6  50 50  50 -50 N

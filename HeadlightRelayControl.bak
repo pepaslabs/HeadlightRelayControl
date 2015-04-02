@@ -3,7 +3,7 @@ LIBS:vref_PL
 LIBS:analog_ICs_PL
 LIBS:capacitors_PL
 LIBS:connectors_PL
-LIBS:diodes_PL
+LIBS:PL_diodes
 LIBS:displays_PL
 LIBS:inductors_PL
 LIBS:LEDs_PL
@@ -56,7 +56,7 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "24 mar 2015"
+Date "2 apr 2015"
 Rev ""
 Comp ""
 Comment1 ""
@@ -91,7 +91,7 @@ L DIODE D3
 U 1 1 550A6578
 P 2100 2850
 F 0 "D3" H 2100 2950 40  0000 C CNN
-F 1 "1N4001" H 2100 2750 40  0000 C CNN
+F 1 "1N5817" H 2100 2750 40  0000 C CNN
 F 2 "" H 2100 2850 60  0000 C CNN
 F 3 "" H 2100 2850 60  0000 C CNN
 	1    2100 2850
@@ -102,7 +102,7 @@ L DIODE D4
 U 1 1 550A6645
 P 2100 3850
 F 0 "D4" H 2100 3950 40  0000 C CNN
-F 1 "1N4001" H 2100 3750 40  0000 C CNN
+F 1 "1N5817" H 2100 3750 40  0000 C CNN
 F 2 "" H 2100 3850 60  0000 C CNN
 F 3 "" H 2100 3850 60  0000 C CNN
 	1    2100 3850
@@ -113,7 +113,7 @@ L DIODE D5
 U 1 1 550A6676
 P 2350 3100
 F 0 "D5" H 2350 3200 40  0000 C CNN
-F 1 "1N4001" H 2350 3000 40  0000 C CNN
+F 1 "1N5817" H 2350 3000 40  0000 C CNN
 F 2 "" H 2350 3100 60  0000 C CNN
 F 3 "" H 2350 3100 60  0000 C CNN
 	1    2350 3100
@@ -396,7 +396,7 @@ F 3 "~" H 6100 7800 60  0000 C CNN
 	1    6100 7800
 	1    0    0    -1  
 $EndComp
-Text Notes 850  3500 0    60   ~ 0
+Text Notes 2900 3500 0    60   ~ 0
 Jumper keeps low beams\non when high beams engaged.
 $Comp
 L CONN_01X02 P3
@@ -414,7 +414,7 @@ L DIODE D8
 U 1 1 550F65FD
 P 5000 1650
 F 0 "D8" H 5000 1750 40  0000 C CNN
-F 1 "1N4001" H 5000 1550 40  0000 C CNN
+F 1 "1N4148" H 5000 1550 40  0000 C CNN
 F 2 "" H 5000 1650 60  0000 C CNN
 F 3 "" H 5000 1650 60  0000 C CNN
 	1    5000 1650
@@ -691,7 +691,7 @@ L DIODE D9
 U 1 1 550F68CB
 P 8300 1650
 F 0 "D9" H 8300 1750 40  0000 C CNN
-F 1 "1N4001" H 8300 1550 40  0000 C CNN
+F 1 "1N4148" H 8300 1550 40  0000 C CNN
 F 2 "" H 8300 1650 60  0000 C CNN
 F 3 "" H 8300 1650 60  0000 C CNN
 	1    8300 1650
@@ -896,4 +896,8 @@ Text GLabel 8600 1100 2    60   Input ~ 0
 HighBeamControl
 Connection ~ 5350 4950
 Connection ~ 8650 4950
+Text Notes 1500 2500 0    30   ~ 0
+If Schottky diodes are not on hand, common rectifier diodes\nmay be substituted (e.g. 1N4001).  This will slightly worsen\nthe low-voltage performance of the circuit (the relays may\nno longer work below 12 Volts).
+Text Notes 6700 4100 0    30   ~ 0
+If your relays don't PICK at low voltages,\ntry substituting 470uF capacitors.
 $EndSCHEMATC
