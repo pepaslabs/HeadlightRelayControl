@@ -14,7 +14,7 @@ In this iteration of the board, the current-limiting resistors are replaced with
 
 ![](releases/v3/bottom.png)
 
-(*Board renders courtesy of [OSHPark](https://oshpark.com/shared_projects/tsktpm17)*)
+(*Board renders courtesy of [OSHPark](https://oshpark.com/shared_projects/iHltO6hv)*)
 
 ## Gerbers
 
